@@ -1,0 +1,19 @@
+<h1><%= @task.title %></h1>
+<div class="task-details">
+  <%= @task.details %>
+</div>
+<div class="task-complete">
+  <% if @task.completed == false %>
+    <p><i class="far fa-square"></i> This task is not completed yet</p>
+  <% else %>
+    <p><i class="far fa-check-square"></i> This task is completed</p>
+  <% end %>
+</div>
+<hr>
+<!-- <i class="fas fa-undo-alt"></i> -->
+<div class="links d-flex">
+  <%= link_to "Back to the tasks list", tasks_path, class: 'btn btn-primary' %>
+  <br>
+  <%= link_to 'Destroy this task', task_path, method: :delete, class: 'btn btn-danger ml-4' %>
+  <%= link_to 'Edit this task', edit_path, class: 'btn btn-success ml-4' %>
+</div>
